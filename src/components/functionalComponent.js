@@ -6,22 +6,27 @@ import store from "../redux/store"
 import {AgGridColumn, AgGridReact} from 'ag-grid-react'
 import 'ag-grid-community/dist/styles/ag-grid.css'
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css'
+import { stat } from "fs"
 
 
 export const FunctionalComponent = (props) => {
-    // console.log(props)
+    console.log(store.getState())
+    const rowData = [
+        {Budget:`${props.budgetAmount}` , Loan: `${props.loanAmount}`, Collateral: `${props.collateral}`},
+        
+    ]
     
     return (
         <>
+        <h1>Built Exercise Grid</h1>
         <div className="ag-theme-alpine" style={{height: 400, width: 600}}>
            <AgGridReact
                rowData={rowData}>
-               <AgGridColumn field="make"></AgGridColumn>
-               <AgGridColumn field="model"></AgGridColumn>
-               <AgGridColumn field="price"></AgGridColumn>
+               <AgGridColumn field="Budget"></AgGridColumn>
+               <AgGridColumn field="Loan"></AgGridColumn>
+               <AgGridColumn field="Collateral"></AgGridColumn>
            </AgGridReact>
        </div>
-        <h1>Budget</h1>
         <h2>{props.budgetAmount}</h2>
         </>
     )
@@ -30,7 +35,9 @@ export const FunctionalComponent = (props) => {
 const state = store.getState()
 const mapStateToProps = (state) => {
     return {
-        budgetAmount: state.budget.budgetAmount
+        budgetAmount: state.budget.budgetAmount,
+        loanAmount: state.loan.loanAmount,
+        collateral: state.collateral.description
     }
 }
 
