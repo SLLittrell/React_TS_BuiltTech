@@ -5,6 +5,15 @@ import React from "react"
 // or an immutability library.
 // reducers must return state, use if/else or switch statements to apply actions 
 
-export const LoanReducer = (state ={}, action) => {
+const loanData = {
+    amount: 0
+}
+
+export const LoanReducer = (state = loanData, action) => {
+    switch(action.type) {
+        case "ADD_BUDGET_AMOUNT": {
+            state = {...state, amount: action.payload}
+        }
+    }
     return state
 }

@@ -5,6 +5,15 @@ import React from "react"
 // or an immutability library.
 // reducers must return state, use if/else or switch statements to apply actions
 
-export const CollateralReducer = (state = {}, action) => {
+const collateralData = {
+    description: "Business Lease"
+}
+
+export const CollateralReducer = (state = collateralData, action) => {
+    switch(action.type) {
+        case "ADD_BUDGET_AMOUNT": {
+            state = {...state, description: action.payload}
+        }
+    }
     return state
 }
