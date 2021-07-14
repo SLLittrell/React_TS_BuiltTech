@@ -3,3 +3,4 @@
 export const ADD_BUDGET_AMOUNT = "addedBudgetAmount"
 export const UPDATED_LOAN_AMOUNT = "updatedLoanAmount"
 export const ADD_COLLATERAL = "collateralAdded"
+export const FETCH_BUDGET_AMOUNT = "fetchBudget"

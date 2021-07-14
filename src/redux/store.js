@@ -1,8 +1,8 @@
 import { createStore } from "redux";
 import reducer from "./reducers/index";
 
-const Store = createStore(reducer)
+const store = createStore(reducer)
 
-console.log(Store.getState())
+console.log(store.getState())
 
-export default Store 
+export default store 

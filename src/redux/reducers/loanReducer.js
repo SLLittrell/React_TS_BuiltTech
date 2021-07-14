@@ -6,7 +6,7 @@ import React from "react"
 // reducers must return state, use if/else or switch statements to apply actions 
 
 const loanData = {
-    amount: 0
+    loanAmount: 0
 }
 
 export const LoanReducer = (state = loanData, action) => {
