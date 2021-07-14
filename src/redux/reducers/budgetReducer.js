@@ -6,5 +6,10 @@ import React from "react"
 // reducers must return state, use if/else or switch statements to apply actions
 
 export const BudgetReducer = (state = {}, action) => {
+    switch(action.type) {
+        case "ADD_BUDGET_AMOUNT": {
+            state = {...state, amount: action.payload}
+        }
+    }
     return state
 }
