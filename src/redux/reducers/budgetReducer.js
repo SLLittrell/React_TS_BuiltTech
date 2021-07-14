@@ -5,8 +5,15 @@ import React from "react"
 // or an immutability library.
 // reducers must return state, use if/else or switch statements to apply actions
 
-export const BudgetReducer = (state = {}, action) => {
+const budgetData = {
+    id: 1,
+    budgetAmount:150000
+}
+export const BudgetReducer = (state = budgetData, action) => {
     switch(action.type) {
+        case "FETCH_BUDGET_AMOUNT": {
+            return state
+        }
         case "ADD_BUDGET_AMOUNT": {
             state = {...state, amount: action.payload}
         }
